@@ -1,6 +1,69 @@
 Revision History for App-psst
 =============================
 
+v0.05 2011-11-11
+----------------
+
+commit 51ae3683c36952f89e423622465a463fdd45725c
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 17:37:20 2011 +0000
+
+    avoid ualarm.
+    
+    smoketesting fails where it is absent (Win32 strawberry),
+     and I chose ualarm by analogy with usleep,
+     not realising that Time::HiRes::alarm could do what I need,
+     and I now guess that alarm($frac) is supported on win32.
+    
+    warn reader of the delay, although it should generally be short;
+    s/ualarm/alarm/ , but still from Time::HiRes;
+    check also that it didn't take too long
+
+commit b6c116ee1a45ad040bcd3a2d233202b6012e489e
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 09:19:01 2011 +0000
+
+    deal with lack of tty.
+    
+    we don't use any job control features;
+    only needed for the few tests that compare
+     output, most just apply regexps
+
+commit 8d3a41da2d43bae5d0332aa5502f445b368a28df
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 00:22:43 2011 +0000
+
+    ditch deprompt in favour of setting PS1.
+    
+    incidentally validate PS1 overriding config;
+    I don't remember what I was thinking,
+     but it can't deal with custom prompts seen in some smoketest sandpits
+
+commit 941b5b043d8186935a0fd4a1a934e56a9bb19baf
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 00:16:21 2011 +0000
+
+    restore Dump, it was in use
+
+commit a4aba58447b1e9d7ebf687ce47b4d4aba2ddff30
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 00:00:59 2011 +0000
+
+    ensure PATH, HOME & TERM in %ENV
+    
+    explain where they are needed;
+    found when running under "env -i"
+
+commit 699e56dfada58ecaa03edc246a409e250d5f4761
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Thu Nov 10 17:38:59 2011 +0000
+
+    bash version: relax "modern-ish".
+    
+    still arbitrary, but 2.05b seen in smoketest;
+    report the version
+     because it is probably relevant for future problems
+
 v0.04 2011-10-23
 ----------------
 
