@@ -5,6 +5,7 @@ author:
 build_requires:
   Test::More: 0
   Time::HiRes: 1.9713
+  YAML: 0
 configure_requires:
   ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
@@ -21,4 +22,4 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=App-psst
   homepage: https://github.com/mca-wtsi/psst
   repository: git://github.com/mca-wtsi/psst
-version: 0.05
+version: 0.06

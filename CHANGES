@@ -1,7 +1,57 @@
 Revision History for App-psst
 =============================
 
-v0.05 2011-11-11
+v0.06 2011-11-21
+----------------
+
+commit 48ae3f697625d765a6e1fd11558b0d09daaa3bd2
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Mon Nov 21 00:01:21 2011 +0000
+
+    remove "see the other code path" breakage
+
+commit 23ac21bb27a008f59a0b44d2fe1c80f03abc9e9c
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Sun Nov 20 23:51:26 2011 +0000
+
+    degrade to CORE::alarm
+     when Time::HiRes::alarm is not implemented
+
+commit 22840ca52060e9f572d116caf53dd88a31e33e6f
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Sun Nov 20 23:50:40 2011 +0000
+
+    decrease Un*x assumption: path_sep not always :
+    
+    use $Config{path_sep}, as local::lib does
+
+commit 55660dc080a1b3addb69c01f6c71ae97b2390d04
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Sun Nov 20 23:53:06 2011 +0000
+
+    decrease Un*x assumption: dirsep may not be /
+    
+    munge them so they are, for our regex
+
+commit 7264008557eadf873ba74b1f43feb7364c47b599
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Sun Nov 20 23:13:15 2011 +0000
+
+    when finding $HOME , fall back to getpwuid.
+    
+    we need it to ensure bash_interactive is not tromping user's history file,
+     so would prefer to match bash's way of finding ~
+     but as long as this runs on author's machine there should be no tromping anyway
+
+commit f7aba5a32a0d189d8905f588f6da5e43728b80f9
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Sun Nov 20 23:10:42 2011 +0000
+
+    YAML now required for testing, declare it.
+    
+    still optional for running, can't declare that
+
+v0.05 2011-11-10
 ----------------
 
 commit 51ae3683c36952f89e423622465a463fdd45725c
