@@ -1,6 +1,20 @@
 Revision History for App-psst
 =============================
 
+v0.08 2011-11-23
+----------------
+
+commit f8fa59a476337d69a136c58e7216c06ae8b59bc0
+Author: Syohei YOSHIDA <syohex@gmail.com>
+Date:   Wed Nov 23 09:57:03 2011 +0900
+
+    Fix checking bash version.
+      - use $BASH_VERSION environment variable instead of '--version' option,
+        because output of '--version' depends on locale.
+    
+        Regexp 'qr{\bbash\b.* version (.*)})' may not match '--version' output
+        on not English locale, if latest bash is installed on it.
+
 v0.06 2011-11-21
 ----------------
 
