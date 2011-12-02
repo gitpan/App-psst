@@ -3,7 +3,7 @@ use warnings;
 
 package App::psst;
 {
-  $App::psst::VERSION = '0.08';
+  $App::psst::VERSION = '0.09';
 }
 
 
@@ -14,7 +14,7 @@ App::psst - prompt string setting tool
 
 =head1 VERSION
 
-version 0.08
+version 0.09
 
 =head1 DESCRIPTION
 

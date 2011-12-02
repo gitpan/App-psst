@@ -13,7 +13,7 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Matthew Astley <mca1001\@users.sourceforge.net>",
   "BUILD_REQUIRES" => {
     "Test::More" => 0,
-    "Time::HiRes" => "1.9713",
+    "Time::HiRes" => "1.9724",
     "YAML" => 0
   },
   "CONFIGURE_REQUIRES" => {
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
   "PREREQ_PM" => {
     "local::lib" => "1.008"
   },
-  "VERSION" => "0.08",
+  "VERSION" => "0.09",
   "test" => {
     "TESTS" => "t/*.t"
   }

@@ -1,6 +1,40 @@
 Revision History for App-psst
 =============================
 
+v0.09 2011-12-02
+----------------
+
+commit 8e33e45f2124d7138c22dc6319a57abb22aa9e6a
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Fri Dec 2 09:16:37 2011 +0000
+
+    try harder for pidseq on busy systems
+    
+    will skip if they're still not smoking green
+
+commit e05d35653c77eb76596f044f28b0af5f0c4ee12c
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Fri Dec 2 09:06:27 2011 +0000
+
+    give up earlier if no Bash.
+    
+    (would prefer an NA for mswin32, rather than a big red FAIL,
+     this probably not enough?)
+    improve version display - some smoke fails on the ([0-9.}) match;
+    run preconds even without bash, they may be useful;
+    remaining tests need bash to work
+
+commit 890f273d01014e03d47f3b59c2f6c429bf3f565e
+Author: Matthew Astley <beeep$mca@t8o.org>
+Date:   Fri Dec 2 09:03:12 2011 +0000
+
+    bump Time::HiRes dep to current
+    
+    previous min version was set for ualarm, now using alarm;
+    seeing breakage on the smoketests (thank you!)
+     for various Un*ces, mostly Perl 5.8.9, all Time::HiRes 1.9715
+     where the alarm doesn't fire
+
 v0.08 2011-11-23
 ----------------
 
